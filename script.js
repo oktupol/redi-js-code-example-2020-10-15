@@ -23,9 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch(url)
             .then(result => result.json())
             .then(data => {
-                // Once the api request is done, remove the loader
-                loader.style.display = 'none';
-
                 // Extract the result array from the returned JSON
                 const results = data.Results;
 
@@ -54,10 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             })
             .catch(error => {
-                loader.style.display = 'none';
-
                 // If an error occurs during the api-request, we log it to the console
                 console.warn(error);
+            })
+            .finally(() => {
+                // The 'finally' method is executed after the api request finishes, regardless of whether there was an error or not.
+                // Once the api request is done, remove the loader
+                loader.style.display = 'none';
             });
     });
 });
