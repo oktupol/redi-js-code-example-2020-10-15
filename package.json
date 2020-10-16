@@ -1,0 +1,10 @@
+{
+  "name": "10-15-car-search",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Sebastian Wieland",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.11.0"
+  }
+}
